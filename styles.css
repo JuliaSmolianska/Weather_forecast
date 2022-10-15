@@ -1,0 +1,86 @@
+img {
+   height: 100px;
+   margin: 0 5% 0 0;
+ }
+ 
+ form {
+   position: absolute;
+   top: 8%;
+   left: 20%;
+ }
+ 
+ ul {
+   display: flex;
+   justify-content: center;
+   list-style-type: none;
+   text-align: justify;
+   background-color: rgb(250, 187, 51);
+   color: rgb(70, 69, 69);
+   height: 50px;
+   font-size: 26px;
+   font-weight: 500;
+ }
+ 
+ p {
+   font-size: 15px;
+ }
+ 
+ @media screen and (min-width: 600px) {
+   p {
+     font-size: 20px;
+   }
+ }
+ 
+ @media screen and (min-width: 992px) {
+   p {
+     font-size: 24px;
+   }
+ }
+ 
+ .cityName {
+   display: inline-flex;
+   text-align: center;
+ }
+ 
+ .temperatura {
+   margin-left: 19%;
+   line-height: 30px;
+ }
+ 
+ .temperature {
+   color: rgb(33, 33, 33);
+   font-size: 28px;
+   font-weight: 400;
+   line-height: 1;
+ }
+ 
+ .degrees {
+   position: relative;
+   top: -10px;
+ }
+ 
+ .week {
+   display: flex;
+   justify-content: center;
+ }
+ 
+ .days {
+   width: 17%;
+   height: 200px;
+   border: 1px solid gray;
+   border-radius: 7px;
+   text-align: center;
+   margin: 10px;
+   padding: 15px auto;
+ }
+ 
+ .cityToday {
+   display: inline-flex;
+   text-align: left;
+   margin-left: 10%;
+   line-height: 30px;
+ }
+ 
+ .moje {
+   font-size: 34px;
+ }
