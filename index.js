@@ -1,4 +1,5 @@
 let now = new Date();
+
 function time() {
   let hours = now.getHours();
   if (hours < 10) {
@@ -29,22 +30,32 @@ dayElement.innerHTML = day;
 
 // week 5
 function showWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  let cityElement = document.querySelector("#city");
+  let temperatureElement = document.querySelector("#temperature");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let descriptionElement = document.querySelector("#description");
+  let iconElement = document.querySelector("#icon");
+
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  descriptionElement.innerHTML = response.data.weather[0].main;
+  iconElement.setAttribute("src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function enterCity(event) {
-   event.preventDefault();
-   let city = document.querySelector("#city-input").value;
-   searchCity(city);
- }
- 
- let searchForm = document.querySelector("#search-form");
- searchForm.addEventListener("submit", enterCity);
- 
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", enterCity);
+
 function searchCity(city) {
   let apiKey = "b9ba0314a93083136d968577c718e31d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
