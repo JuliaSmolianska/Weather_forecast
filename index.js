@@ -28,7 +28,33 @@ let day = days[now.getDay()];
 let dayElement = document.querySelector("#day");
 dayElement.innerHTML = day;
 
-// week 5
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML +
+      `<div class="col-2 days">
+    <div>
+      ${day}
+    </div>
+    <img src="http://openweather.org/img/ws/50d@2x.pgn" 
+    alt="☀️" 
+    class = "moje" />
+    <div class="weatherForecastTemp">
+      <span class="weatherForecastTemp-Max">
+      13°C / 
+    </span>
+    <span class="weatherForecastTemp-Min">
+      8°C
+    </span>
+    </div>
+  </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
@@ -74,3 +100,5 @@ function getCurrentLocation(event) {
 }
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+displayForecast();
