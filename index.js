@@ -28,31 +28,44 @@ let day = days[now.getDay()];
 let dayElement = document.querySelector("#day");
 dayElement.innerHTML = day;
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return days[day];;;
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-    forecastHTML = forecastHTML +
+  forecast.forEach(function (forecastDay, index) {
+    if (index<5) {forecastHTML = forecastHTML +
       `<div class="col-2 days">
     <div>
-      ${day}
+      ${formatDay(forecastDay.dt)}
     </div>
-    <img src="http://openweather.org/img/ws/50d@2x.pgn" 
-    alt="☀️" 
+    <img  src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+    alt="" 
     class = "moje" />
     <div class="weatherForecastTemp">
       <span class="weatherForecastTemp-Max">
-      13°C / 
+     ${Math.round(forecastDay.temp.max)}°C / 
     </span>
     <span class="weatherForecastTemp-Min">
-      8°C
+    ${Math.round(forecastDay.temp.min)}°C
     </span>
     </div>
   </div>`;
-  });
+  }});
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -71,6 +84,8 @@ function showWeather(response) {
   iconElement.setAttribute("src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function enterCity(event) {
@@ -100,5 +115,3 @@ function getCurrentLocation(event) {
 }
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-displayForecast();
