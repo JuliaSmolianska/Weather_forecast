@@ -13,24 +13,25 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
-<body>
+<body onload="addWeather()">
   <header>
     <span class="container col-2 text-start">
       <img src="index.jpg" alt="labelWeather" class="imgEmblem" />
     </span>
-    <form id="search-form" class="col-10">
-      <input class="col-4" type="search" placeholder="Enter your city.." autofocus="on" autocomplete="off"
+    <form id="search-form" class="col-md-10 form">
+      <input class="col-6 col-md-4" type="search" placeholder="Enter your city.." autofocus="on" autocomplete="off"
         id="city-input" />
-      <input type="submit" value="Search" class="btn btn-warning col-3" />
-      <input type="submit" value="Current" class="btn btn-primary col-3" id="current-location-button" />
+      <input type="submit" value="Search" class="btn btn-primary col-4 col-md-2" />
+      <input type="submit" value="Current" class="btn btn-warning col-6 col-md-2" id="current-location-button" />
     </form>
   </header>
   <ul class="col-12 cityName">
-    <li class="col-2">Berlin</li>
-    <li class="col-2">Paris</li>
-    <li class="col-2">Vena</li>
-    <li class="col-2">Rome</li>
-    <li class="col-2">Madrid</li>
+    <li class="col-4 col-md-2" id="Berlin">Berlin</li>
+    <li class="col-4 col-md-2">Paris</li>
+    <li class="col-4 col-md-2">Vena</li>
+    <li class="col-4 col-md-2">Rome</li>
+    <li class="col-4 col-md-2">Madrid</li>
+    <li class="col-4 col-md-2">London</li>
   </ul>
 
   <div class="container">
@@ -42,7 +43,7 @@
     </div>
   </div>
   <div class="container cityToday">
-    <img src="" alt="☀️" id="icon" class="moje" />
+    <img src="" alt="" id="icon" class="moje" />
     <span class="temperature" id="temperature">
       13
     </span>
@@ -51,6 +52,7 @@
     </span>
     <div class="col-6">
       <p>Humidity: <span id="humidity">16 </span> %</p>
+      <br />
       <p>Wind: <span id="wind">4 </span> m/s</p>
     </div>
   </div>

@@ -28,10 +28,15 @@ let day = days[now.getDay()];
 let dayElement = document.querySelector("#day");
 dayElement.innerHTML = day;
 
+function addWeather() {
+  let city = "New York";
+  searchCity(city);
+}
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  return days[day];;;
+  return days[day];
 }
 
 function displayForecast(response) {
@@ -40,7 +45,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index<5) {forecastHTML = forecastHTML +
-      `<div class="col-2 days">
+      `<div class="col-3 col-lg-2 days">
     <div>
       ${formatDay(forecastDay.dt)}
     </div>
