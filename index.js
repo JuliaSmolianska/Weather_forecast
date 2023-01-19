@@ -33,7 +33,7 @@ function addWeather() {
   searchCity(city);
 }
 
-function clickCity() {
+function clickBerlin() {
   let berlin = "Berlin";
   searchCity(berlin);
 }
