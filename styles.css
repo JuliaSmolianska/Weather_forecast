@@ -63,10 +63,6 @@ p {
   }
 }
 
-.cityName {
-  display: inline-flex;
-  text-align: center;
-}
 
 .temperatura {
   margin-left: 19%;
