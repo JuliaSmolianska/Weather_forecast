@@ -63,7 +63,6 @@ p {
   }
 }
 
-
 .temperatura {
   margin-left: 19%;
   line-height: 30px;
@@ -84,7 +83,7 @@ p {
 }
 
 .week {
-  padding: 5px;
+  padding: 5px 5%;
 }
 
 .days {

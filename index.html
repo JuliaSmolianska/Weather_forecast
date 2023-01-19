@@ -14,13 +14,13 @@
 </head>
 
 <body onload="addWeather()">
-  <div class="container-fluid">
+  <div>
     <header>
       <span class="container col-2 text-start">
         <img src="index.jpg" alt="labelWeather" class="imgEmblem" />
       </span>
-      <form id="search-form" class="col-md-10 form">
-        <input class="col-6 col-md-4" type="search" placeholder="Enter your city.." autofocus="on" autocomplete="off"
+      <form id="search-form" class="col-md-9 form">
+        <input class="col-5 col-md-4" type="search" placeholder="Enter your city.." autofocus="on" autocomplete="off"
           id="city-input" />
         <input type="submit" value="Search" class="btn btn-primary col-4 col-md-2" />
         <input type="submit" value="Current" class="btn btn-warning col-6 col-md-2" id="current-location-button" />
@@ -28,11 +28,11 @@
     </header>
     <ul class="d-flex justify-content-evenly">
       <li onclick="clickCity()" class="col-4 col-md-2">Berlin</li>
-      <li class="col-4 col-md-2">Paris</li>
-      <li class="col-4 col-md-2">Vena</li>
-      <li class="col-4 col-md-2">Rome</li>
-      <li class="col-4 col-md-2">Madrid</li>
-      <li class="col-4 col-md-2">London</li>
+      <li onclick="searchCity()"class="col-4 col-md-2" value="Paris">Paris</li>
+      <li class="col-4 col-md-2" value="Vena">Vena</li>
+      <li class="col-4 col-md-2" value="Rome">Rome</li>
+      <li class="col-4 col-md-2" value="Madrid">Madrid</li>
+      <li class="col-4 col-md-2" value="London">London</li>
     </ul>
 
     <div class="container">
@@ -57,7 +57,7 @@
         <p>Wind: <span id="wind">4 </span> m/s</p>
       </div>
     </div>
-    <div class="week d-flex justify-content-evenly" id="forecast">
+    <div class="week" id="forecast">
     </div>
   </div>
 
