@@ -33,9 +33,24 @@ function addWeather() {
   searchCity(city);
 }
 
-function clickBerlin() {
-  let berlin = "Berlin";
-  searchCity(berlin);
+function clickParis() {
+  let paris = "Paris";
+  searchCity(paris);
+}
+
+function clickVena() {
+  let vena = "Vena";
+  searchCity(vena);
+}
+
+function clickRome() {
+  let rome = "Rome";
+  searchCity(rome);
+}
+
+function clickMadrid() {
+  let madrid = "Madrid";
+  searchCity(madrid);
 }
 
 function formatDay(timestamp) {
