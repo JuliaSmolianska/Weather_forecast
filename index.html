@@ -14,49 +14,51 @@
 </head>
 
 <body onload="addWeather()">
-  <header>
-    <span class="container col-2 text-start">
-      <img src="index.jpg" alt="labelWeather" class="imgEmblem" />
-    </span>
-    <form id="search-form" class="col-md-10 form">
-      <input class="col-6 col-md-4" type="search" placeholder="Enter your city.." autofocus="on" autocomplete="off"
-        id="city-input" />
-      <input type="submit" value="Search" class="btn btn-primary col-4 col-md-2" />
-      <input type="submit" value="Current" class="btn btn-warning col-6 col-md-2" id="current-location-button" />
-    </form>
-  </header>
-  <ul class="d-flex justify-content-evenly">
-    <li class="col-4 col-md-2"><button onclick="clickCity">Berlin</button></li>
-    <li class="col-4 col-md-2">Paris</li>
-    <li class="col-4 col-md-2">Vena</li>
-    <li class="col-4 col-md-2">Rome</li>
-    <li class="col-4 col-md-2">Madrid</li>
-    <li class="col-4 col-md-2">London</li>
-  </ul>
+  <div class="container-fluid">
+    <header>
+      <span class="container col-2 text-start">
+        <img src="index.jpg" alt="labelWeather" class="imgEmblem" />
+      </span>
+      <form id="search-form" class="col-md-10 form">
+        <input class="col-6 col-md-4" type="search" placeholder="Enter your city.." autofocus="on" autocomplete="off"
+          id="city-input" />
+        <input type="submit" value="Search" class="btn btn-primary col-4 col-md-2" />
+        <input type="submit" value="Current" class="btn btn-warning col-6 col-md-2" id="current-location-button" />
+      </form>
+    </header>
+    <ul class="d-flex justify-content-evenly">
+      <li class="col-4 col-md-2"><button onclick="clickCity">Berlin</button></li>
+      <li class="col-4 col-md-2">Paris</li>
+      <li class="col-4 col-md-2">Vena</li>
+      <li class="col-4 col-md-2">Rome</li>
+      <li class="col-4 col-md-2">Madrid</li>
+      <li class="col-4 col-md-2">London</li>
+    </ul>
 
-  <div class="container">
-    <div class="col-4">
-      <h1 id="city">Paris</h1>
-      <h2><span id="day">Monday</span>, <span id="time">15:00</span></h2>
-      <p><i id="description">Mostly cloudy</i></p>
-      <p>Temperatura:</p>
+    <div class="container">
+      <div class="col-4">
+        <h1 id="city">Paris</h1>
+        <h2><span id="day">Monday</span>, <span id="time">15:00</span></h2>
+        <p><i id="description">Mostly cloudy</i></p>
+        <p>Temperatura:</p>
+      </div>
     </div>
-  </div>
-  <div class="container cityToday">
-    <img src="" alt="" id="icon" class="moje" />
-    <span class="temperature" id="temperature">
-      13
-    </span>
-    <span class="degrees">
-      °C
-    </span>
-    <div class="col-6">
-      <p>Humidity: <span id="humidity">16 </span> %</p>
-      <br />
-      <p>Wind: <span id="wind">4 </span> m/s</p>
+    <div class="container cityToday">
+      <img src="" alt="" id="icon" class="moje" />
+      <span class="temperature" id="temperature">
+        13
+      </span>
+      <span class="degrees">
+        °C
+      </span>
+      <div class="col-6">
+        <p>Humidity: <span id="humidity">16 </span> %</p>
+        <br />
+        <p>Wind: <span id="wind">4 </span> m/s</p>
+      </div>
     </div>
-  </div>
-  <div class="week" id="forecast">
+    <div class="week d-flex justify-content-evenly" id="forecast">
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
